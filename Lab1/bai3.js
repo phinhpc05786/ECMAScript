@@ -1,17 +1,23 @@
-fetch('https://catfact.ninja/fact')
+fetch('https://api.publicapis.org/entries')
 
     .then(function (response) {
-        let elements;
-        response.json().then(function (jsonData) {
-            console.log(jsonData.data);
+        response.json().then(function (data) {
+            // console.log(data.entries);
 
-            elements = jsonData.data.map(function (item) {
-                return `<li>${item.fact}</li>`
-            })
+            let array = data.entries;
+            let theP = document.getElementById('theP');
+            let child_html = `<ul><li><strong>COUNT: </strong>${data.count}</li>`;
 
-            document.writeln("<ol>" + elements.join("") + "</ol>")
+            array.forEach(element => {
+                // console.log(element.API);
+                child_html += `<li> ${element.Description} </li>`;
+            });
+
+            child_html += '</ul>';
+            theP.innerHTML = child_html;
         });
     })
+
     .catch(function (err) {
         console.log(err);
     });
