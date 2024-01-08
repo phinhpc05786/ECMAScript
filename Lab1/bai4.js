@@ -45,9 +45,9 @@ Promise.all([
         //end  Table 1 bài 4.1
 
 
-        //end  Table 2 bài 4.2
+        //Table 2 bài 4.2
         let count1 = 1;
-        console.log(studentsData);
+        // console.log(studentsData);
 
         let array1 = studentsData;
         let theDiv1 = document.getElementById('container1');
@@ -81,11 +81,6 @@ Promise.all([
         child_html1 += `</tbody></table>`;
         theDiv1.innerHTML = child_html1;
     })
-
-
-
-
-
 
     .catch(function (err) {
         console.log(err);
