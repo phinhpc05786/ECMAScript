@@ -23,7 +23,14 @@
 
 const axios = require('axios');
 
-axios.get('http://localhost:3000/posts')
-  .then ( (data) => {
-    console.log(data.data);
-  })
+const API_URL = 'http://localhost:3000/';
+// Lấy danh sách
+axios.get(API_URL + 'comments').then( ({ data }) => console.log(data))
+// Lấy 1 phần tử
+axios.get(API_URL + 'comments/' + 1).then( ({ data }) => console.log(data))
+let comments = {
+    "body": "Bài viết",
+    "postID": 1
+}
+
+axios.postIDs(comments).then( ({ data }) => console.log(data))
