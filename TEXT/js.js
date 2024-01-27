@@ -1,7 +1,13 @@
-var arr = [1, 2, 3];
-var arr1 = [4, 5, 6];
-var myConCat = function (arr,arr1){
-    return ([...arr, ...arr1])
-} ;
+import { API_URL, name, sum, minus, moduleNe, APICaller, Post } from "./asm.js";
 
-console.log(myConCat(arr, arr1 ));
+new User;
+
+console.log(API_URL);
+console.log(name);
+console.log(sum(1, 2));
+console.log(minus(2, 1));
+console.log(moduleNe);
+console.log(APICaller);
+new APICaller;
+
+new Post("");

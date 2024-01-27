@@ -1,39 +1,34 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+const API_URL = "https://api.publicapis.org/";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCsn1Cqnrnx7Yhp_Bb4vkSrQ7AnCSURGOE",
-  authDomain: "fir-42c3b.firebaseapp.com",
-  databaseURL: "https://fir-42c3b-default-rtdb.firebaseio.com",
-  projectId: "fir-42c3b",
-  storageBucket: "fir-42c3b.appspot.com",
-  messagingSenderId: "790574754725",
-  appId: "1:790574754725:web:0b7dfb67f04f5806b2564c",
-  measurementId: "G-WJCF2VWL6J"
-};
+let name = "KIMDANG";
+export { name };
+export function sum(number1, number2) {
+    return number1 + number2;
+}
+export function minus(number1, number2) {
+    return number1 - number2;
+}
+export * as moduleNe from './js.js'
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export class APICaller {
+    constructor() {
+        console.log("Sayhello");
+    }
+}
 
-import { getDatabase } from "firebase/database";
+class Post extends APICaller() {
+    constructor(url) {
+        super();
+        console.log(url);
+    }
+}
+export { Post };
 
-const database = getDatabase();
+export default class User{
+    constructor(){
+        console.log('dâkdadjldad');
+    }
+}
 
-fetch('https://fir-42c3b-default-rtdb.firebaseio.com.json')
-
-    .then(function (response) {
-        response.json().then(function (data) {
-            console.log(data);
-
-        });
-    })
-
-    .catch(function (err) {
-        console.log(err);
-    });
+// // export{minus}
+// export * from './module.js'
