@@ -1,4 +1,4 @@
-import { API_URL, name, sum, minus, moduleNe, APICaller, Post } from "./asm.js";
+import { API_URL, name, sum, minus, moduleNe, APICaller, Post } from "./";
 
 new User;
 

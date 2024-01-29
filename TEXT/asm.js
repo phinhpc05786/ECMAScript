@@ -8,7 +8,7 @@ export function sum(number1, number2) {
 export function minus(number1, number2) {
     return number1 - number2;
 }
-export * as moduleNe from './js.js'
+export * as moduleNe from './'
 
 export class APICaller {
     constructor() {
