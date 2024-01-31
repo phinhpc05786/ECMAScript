@@ -31,34 +31,6 @@
     {
       "id": 8,
       "name": "Strawberry"
-    },
-    {
-      "id": 9,
-      "name": "Peach"
-    },
-    {
-      "id": 10,
-      "name": "Cherry"
-    },
-    {
-      "id": 11,
-      "name": "Kiwi"
-    },
-    {
-      "id": 12,
-      "name": "Blueberry"
-    },
-    {
-      "id": 13,
-      "name": "Papaya"
-    },
-    {
-      "id": 14,
-      "name": "Pear"
-    },
-    {
-      "id": 15,
-      "name": "Lemon"
     }
   ],
   "order_details": [

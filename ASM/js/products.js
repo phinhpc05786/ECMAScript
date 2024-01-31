@@ -19,11 +19,11 @@ fetch("http://localhost:3000/products")
                     </div>
                     <div class="text-white bg-secondary px-3 py-1 rounded position-absolute" style="top: 10px; left: 10px;">${data.cate_id}</div>
                     <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                        <h4>${element.name}</h4>
+                        <h4 class="nameProduct">${element.name}</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                         <div class="d-flex justify-content-between flex-lg-wrap">
-                            <p class="text-dark fs-5 fw-bold mb-0">$ ${element.price}</p>
-                            <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                            <p class="text-dark fs-5 fw-bold mb-0">$ <p class="price" > ${element.price}</p></p>
+                            <button href="" onclick="cart(this)" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</button>
                         </div>
                     </div>
                 </div>
