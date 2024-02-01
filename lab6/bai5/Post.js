@@ -1,4 +1,4 @@
-import APICaller from './APICaller';
+import APICaller from './APICaller.js';
 
 class Post extends APICaller {
     constructor(baseURL) {

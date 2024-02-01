@@ -1,13 +1,3 @@
-import { API_URL, name, sum, minus, moduleNe, APICaller, Post } from "./";
+const msg = 'Message';
 
-new User;
-
-console.log(API_URL);
-console.log(name);
-console.log(sum(1, 2));
-console.log(minus(2, 1));
-console.log(moduleNe);
-console.log(APICaller);
-new APICaller;
-
-new Post("");
+console.log(msg);
