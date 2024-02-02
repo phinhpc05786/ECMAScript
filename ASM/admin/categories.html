@@ -177,10 +177,17 @@
                                 
                                 
                                 <div class="p-3">
-                                    <table id="listCategory" class="text-center table-responsive w-full rounded">
+                                    <table class="text-center table-responsive w-full rounded">
+                                        <thead>
+                                            <tr>
+                                              <th class="border w-1/6 px-4 py-2">ID</th>
+                                              <th class="border w-1/6 px-4 py-2">Name</th>
+                                              <th class="border w-1/7 px-4 py-2"></th>
+                                            </tr>
+                                          </thead>
+                                          <tbody id="listCategory" >
 
-
-
+                                          </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -203,8 +210,9 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./firebase/data.json"></script>
-    <script src="./src/categories.js"></script>
+    <script type="module" src="./src/categories.js"></script>
     <script src="./main.js"></script>
     <script>
         // Get the modal
