@@ -30,5 +30,23 @@ export class productService {
         }
     }
 
+    static async  getDataById(id){
+        try {
+            const response = await axios.get(`http://localhost:3000/categories/${id}`);
+            return response.data;
+        } catch (e) {
+            console.log(e);
+            throw e;
+        }
+    }
+
+    static async updateCase(id,data){
+        try {
+            await axios.put(`http://localhost:3000/categories/${id}`, data);
+        } catch (e) {
+            console.log(e);
+            throw e;
+        }
+    }
 
 }

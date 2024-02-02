@@ -6,27 +6,27 @@
     },
     {
       "id": "2",
-      "name": "Banana"
+      "name": "ưe"
     },
     {
       "id": "3",
-      "name": "Orange"
+      "name": "w"
     },
     {
       "id": "4",
-      "name": "Mango"
+      "name": "ừe"
     },
     {
       "id": "5",
-      "name": "Pineapple"
+      "name": "ưefwf"
     },
     {
       "id": "6",
-      "name": "Grapes"
+      "name": "ừew"
     },
     {
       "id": "7",
-      "name": "Watermelon"
+      "name": "phi"
     }
   ],
   "order_details": [
@@ -329,14 +329,6 @@
       "image": "",
       "name": "Zucchini",
       "price": 1.8
-    },
-    {
-      "id": "8",
-      "cate_id": 2,
-      "detail": "Flavorful herb commonly used in cooking",
-      "image": "",
-      "name": "Parsley",
-      "price": 1.3
     },
     {
       "id": "9",

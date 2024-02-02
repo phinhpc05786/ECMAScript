@@ -5,139 +5,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
+    <meta name="keywords"
+        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,admin templates, admin template, admin dashboard, free tailwind templates, tailwind example">
     <!-- Css -->
     <link rel="stylesheet" href="./dist/styles.css">
     <link rel="stylesheet" href="./dist/all.css">
+    <link rel="stylesheet" href="./dist/style.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i,700,700i" rel="stylesheet">
     <title>Dashboard | Tailwind Admin</title>
 </head>
 
 <body>
-<!--Container -->
-<div class="mx-auto bg-grey-400">
-    <!--Screen-->
-    <div class="min-h-screen flex flex-col">
-        <!--Header Section Starts Here-->
-        <header class="bg-nav">
-            <div class="flex justify-between">
-                <div class="p-1 mx-3 inline-flex items-center">
-                    <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
-                    <h1 class="text-white p-2">Logo</h1>
-                </div>
-                <div class="p-1 flex flex-row items-center">
-                    <a href="https://github.com/tailwindadmin/admin" class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
-
-
-                    <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full" src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
-                    <a href="#" onclick="profileToggle()" class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
-                    <div id="ProfileDropDown" class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
-                        <ul class="list-reset">
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My account</a></li>
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a></li>
-                          <li><hr class="border-t mx-2 border-grey-ligght"></li>
-                          <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a></li>
-                        </ul>
+    <!--Container -->
+    <div class="mx-auto bg-grey-400">
+        <!--Screen-->
+        <div class="min-h-screen flex flex-col">
+            <!--Header Section Starts Here-->
+            <header class="bg-nav">
+                <div class="flex justify-between">
+                    <div class="p-1 mx-3 inline-flex items-center">
+                        <i class="fas fa-bars pr-2 text-white" onclick="sidebarToggle()"></i>
+                        <h1 class="text-white p-2">Logo</h1>
                     </div>
-                </div>
-            </div>
-        </header>
-        <!--/Header-->
+                    <div class="p-1 flex flex-row items-center">
+                        <a href="https://github.com/tailwindadmin/admin"
+                            class="text-white p-2 mr-2 no-underline hidden md:block lg:block">Github</a>
 
-        <div class="flex flex-1">
-                    <!--Sidebar-->
-                    <aside id="sidebar" class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
 
-                        <ul class="list-reset flex flex-col">
-                            <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
-                                <a href="index.html"
-                                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    <i class="fas fa-tachometer-alt float-left mx-2"></i>
-                                    Dashboard
-                                    <span><i class="fas fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
-                            <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                <a href="products.html"
-                                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    <i class="fas fa-table float-left mx-2" ></i>
-                                    Products
-                                    <span><i class="fa fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
-                            <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                <a href="order.html"
-                                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    <i class="fab fa-wpforms float-left mx-2"></i>
-                                    Order
-                                    <span><i class="fa fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
-                            <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                <a href="static.html"
-                                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    <i class="fas fa-grip-horizontal float-left mx-2"></i>
-                                    Statistics
-                                    <span><i class="fa fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
-                            <li class="w-full h-full py-3 px-2 border-b border-light-border">
-                                <a href="categories.html"
-                                   class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
-                                    <i class="fab fa-uikit float-left mx-2"></i>
-                                    Category
-                                    <span><i class="fa fa-angle-right float-right"></i></span>
-                                </a>
-                            </li>
-                            
-                                </ul>
-                            </li>
-                        </ul>
-        
-                    </aside>
-                    <!--/Sidebar-->
-            <!--Main-->
-            <main class="bg-white-500 flex-1 p-3 overflow-hidden">
-
-                <div class="flex flex-col">
-
-                    <!--Grid Form-->
-
-                    <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
-                        <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
-                            <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
-                                PRODUCTS
-                                
-                            </div>
-                            <button class=" m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Add product
-                            </button>
-                            <div class="p-3">
-                                <table id="listProducts" class="text-center table-responsive w-full rounded">
-                                    
-                                        
-                                    
-                                </table>
-                            </div>
+                        <img onclick="profileToggle()" class="inline-block h-8 w-8 rounded-full"
+                            src="https://avatars0.githubusercontent.com/u/4323180?s=460&v=4" alt="">
+                        <a href="#" onclick="profileToggle()"
+                            class="text-white p-2 no-underline hidden md:block lg:block">Adam Wathan</a>
+                        <div id="ProfileDropDown"
+                            class="rounded hidden shadow-md bg-white absolute pin-t mt-12 mr-1 pin-r">
+                            <ul class="list-reset">
+                                <li><a href="#" class="no-underline px-4 py-2 block text-black hover:bg-grey-light">My
+                                        account</a></li>
+                                <li><a href="#"
+                                        class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Notifications</a>
+                                </li>
+                                <li>
+                                    <hr class="border-t mx-2 border-grey-ligght">
+                                </li>
+                                <li><a href="#"
+                                        class="no-underline px-4 py-2 block text-black hover:bg-grey-light">Logout</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <!--/Grid Form-->
                 </div>
-            </main>
-            <!--/Main-->
+            </header>
+            <!--/Header-->
+
+            <div class="flex flex-1">
+                <!--Sidebar-->
+                <aside id="sidebar"
+                    class="bg-side-nav w-1/2 md:w-1/6 lg:w-1/6 border-r border-side-nav hidden md:block lg:block">
+
+                    <ul class="list-reset flex flex-col">
+                        <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                            <a href="index.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fas fa-tachometer-alt float-left mx-2"></i>
+                                Dashboard
+                                <span><i class="fas fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                            <a href="products.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fas fa-table float-left mx-2"></i>
+                                Products
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                            <a href="order.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-wpforms float-left mx-2"></i>
+                                Order
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                            <a href="static.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fas fa-grip-horizontal float-left mx-2"></i>
+                                Statistics
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+                        <li class="w-full h-full py-3 px-2 border-b border-light-border">
+                            <a href="categories.html"
+                                class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                                <i class="fab fa-uikit float-left mx-2"></i>
+                                Category
+                                <span><i class="fa fa-angle-right float-right"></i></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    </li>
+                    </ul>
+
+                </aside>
+                <!--/Sidebar-->
+                <!--Main-->
+
+                <main class="bg-white-500 flex-1 p-3 overflow-hidden">
+
+                    <div class="flex flex-col">
+
+                        <!--Grid Form-->
+                        <!-- Modal content -->
+                        <div id="editModal" class="modal"></div>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
+                                    <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
+                                        <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                                            Add product 
+                                        </div>
+                                        <div class="p-3">
+                                            <form class="w-full">
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            ID
+                                                        </label>
+                                                        <input disabled
+                                                            class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                                            type="number" placeholder="Id">
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            Name
+                                                        </label>
+                                                        <input id="name"
+                                                            class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                                            type="text" placeholder="Name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            Img
+                                                        </label>
+                                                        <input id="img"
+                                                            class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                                            type="file" placeholder="Img">
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            Price
+                                                        </label>
+                                                        <input id="price"
+                                                            class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                                            type="number" placeholder="Price">
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            Cate
+                                                        </label>
+                                                        <select id="categorySelect" class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"></select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex flex-wrap -mx-3 mb-6">
+                                                    <div class="w-full px-3">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                                            for="grid-password">
+                                                            Detail
+                                                        </label>
+                                                        <input id="detail"
+                                                            class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                                            type="text" placeholder="Detail">
+                                                    </div>
+                                                </div>
+                                                <input type="button" value="Add category" id="addPro"
+                                                    class=" m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-1  flex-col md:flex-row lg:flex-row mx-2">
+                            <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
+                                <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                                    PRODUCTS
+
+                                </div>
+                                <button id="myBtn"
+                                    class=" m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Add product
+                                </button>
+
+                                <div class="p-3">
+                                    <table class="text-center table-responsive w-full rounded">
+                                        <thead>
+                                            <tr>
+                                              <th class="border w-1/6 px-4 py-2">Name</th>
+                                              <th class="border w-1/6 px-4 py-2">Image</th>
+                                              <th class="border w-1/7 px-4 py-2">Price</th>
+                                              <th class="border w-1/8 px-4 py-2">Category</th>
+                                              <th class="border w-1/6 px-4 py-2">Detail</th>
+                                              <th class="border w-1/7 px-4 py-2"></th>
+                                            </tr>
+                                          </thead>
+                                          <tbody  id="listProducts" >
+
+                                          </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Grid Form-->
+                    </div>
+                </main>
+                <!--/Main-->
+            </div>
+
+            <!--Footer-->
+            <footer class="bg-grey-darkest text-white p-2">
+                <div class="flex flex-1 mx-auto">&copy; My Design</div>
+                <div class="flex flex-1 mx-auto">Distributed by: <a href="https://themewagon.com/"
+                        target=" _blank">Themewagon</a></div>
+            </footer>
+            <!--/footer-->
+
         </div>
-        <!--Footer-->
-        <footer class="bg-grey-darkest text-white p-2">
-            <div class="flex flex-1 mx-auto">&copy; My Design</div>
-            <div class="flex flex-1 mx-auto">Distributed by:  <a href="https://themewagon.com/" target=" _blank">Themewagon</a></div>
-        </footer>
-        <!--/footer-->
 
     </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
 
-</div>
-<script src="./src/products.js"></script>
-<script src="./main.js"></script>
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <div id="editModal" class="modal"></div>
+    <div id="myModal" class="modal">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="./src/products.js"></script>
+        <script src="./main.js"></script>
+
 </body>
 
 </html>
