@@ -88,17 +88,6 @@ async function fetchData() {
 
 let array;
 
-async function fetchDataAndRender() {
-  try {
-    const response = await fetch("http://localhost:3000/categories");
-    array = await response.json();
-    fetchData();
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-
 async function populateCategories() {
   const selectElement = document.getElementById("categorySelect");
 
@@ -112,9 +101,8 @@ async function populateCategories() {
 
     // Xóa các option đã tồn tại
     selectElement.innerHTML = "";
-
     // Thêm option cho mỗi danh mục
-    categories.forEach(category => {
+    categories.forEach((category) => {
       const option = document.createElement("option");
       option.value = category.id;
       option.text = category.name;
@@ -128,31 +116,40 @@ async function populateCategories() {
 // Gọi hàm để cập nhật danh sách danh mục khi trang được tải
 document.addEventListener("DOMContentLoaded", populateCategories);
 
+async function fetchDataAndRender() {
+  try {
+    const response = await fetch("http://localhost:3000/categories");
+    array = await response.json();
+    fetchData();
+    addPro(array); // Gọi hàm addPro sau khi array đã được khởi tạo
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 function addPro(array) {
-  document.querySelector('#addPro').onclick = async function () {
+  document.querySelector("#addPro").onclick = async function () {
     try {
-      const name = document.querySelector('#name').value;
-      const img = document.querySelector('#img').value;  // Điều chỉnh để xử lý input kiểu file
-      const price = document.querySelector('#price').value;
-      const category = document.querySelector('#categorySelect').value;
-      const detail = document.querySelector('#detail').value;
+      const name = document.querySelector("#name").value;
+      const img = document.querySelector("#img").value;
+      const price = document.querySelector("#price").value;
+      const category = document.querySelector("#categorySelect").value;
+      const detail = document.querySelector("#detail").value;
 
-      const id = (array.length > 0 ? parseInt(array[array.length - 1].id) + 1 : 1).toString();
+      const id = array.length > 0 ? parseInt(array[array.length - 1].id) + 1 : 1;
 
       const pro = {
-        "id": id,
-        "name": name,
-        "img": img,
-        "price": price,
-        "cate_id": category,
-        "detail": detail
+        id: id.toString(),
+        name: name,
+        img: img,
+        price: price,
+        cate_id: category,
+        detail: detail,
       };
 
       await productService.addData(pro);
 
-      document.getElementById('myModal').style.display = "none";
-
+      document.getElementById("myModal").style.display = "none";
 
       fetchData();
     } catch (error) {
@@ -161,113 +158,216 @@ function addPro(array) {
   };
 }
 
+// Gọi hàm để cập nhật danh sách danh mục khi trang được tải
+document.addEventListener("DOMContentLoaded", () => {
+  fetchDataAndRender();
+  populateCategories();
+});
+
+
+
 //delete categories
-const editModal = document.getElementById('editModal');
-document.querySelector('tbody').addEventListener("click", function(e){
-  if(e.target.classList.contains('deleteCate')){
-    const id = e.target.getAttribute('data-id');
+const editModal = document.getElementById("editModal");
+document.querySelector("tbody").addEventListener("click", function (e) {
+  if (e.target.classList.contains("deleteCate")) {
+    const id = e.target.getAttribute("data-id");
     console.log(id);
     console.log(e.target);
     productService.deleteData(id);
-    fetchData()
+    fetchData();
   } else {
-    console.log('Delete error');
+    console.log("Delete error");
   }
-})
+});
 
 // Open the edit page for a category
-// document.querySelector('tbody').addEventListener("click", function (event) {
-//   if (event.target.classList.contains('openEditPage')) {
-//     const id = event.target.getAttribute('data-id');
-//     productService.getDataById(id).then(category => {
-//       const editModal = document.getElementById('editModal');
+document.querySelector("tbody").addEventListener("click", function (event) {
+  if (event.target.classList.contains("openEditPage")) {
+    const id = event.target.getAttribute("data-id");
 
-//       editModal.style.display = 'block';
+    productService.getDataById(id).then(function (category) {
+      const editModal = document.getElementById("editModal");
 
-//       editModal.innerHTML = createEditForm(category);
+      editModal.style.display = "block";
 
-//       const closeSpan = editModal.querySelector(".close");
-//       closeSpan.addEventListener("click", function () {
-//         editModal.style.display = "none";
-//       });
+      editModal.innerHTML = createEditForm(category);
 
-//       const editButton = document.getElementById('editPro');
-//       editButton.addEventListener("click", function () {
-//         editCategory(id);
-//       });
-//     });
-//   } else {
-//     console.log('error r');
-//   }
-// });
-
-// editModal.addEventListener("click", function (event) {
-//   if (event.target.classList.contains('editCate')) {
-//     const id = event.target.getAttribute('data-id');
-//     const editName = document.getElementById('editName').value;
-//     const editID = document.getElementById('editID').value;
-//     const updatedCategory = {
-//       "id": parseInt(editID, 10),
-//       "name": editName
-//     };
-
-//     productService.updateCase(id, updatedCategory);
-//     document.getElementById('editModal').style.display = "none";
-//     renderCategories(array);
-//   } else {
-//     console.log('Error');
-//   }
-// });
+      const closeSpan = editModal.querySelector(".close");
+      closeSpan.addEventListener("click", function () {
+        editModal.style.display = "none";
+      });
 
 
-// function createEditForm(category) {
-//   return `
-//     <div class="modal-content">
-//       <span class="close">&times;</span>
-//       <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-2">
-//         <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
-//           <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
-//             Edit categories
-//           </div>
-//           <div class="p-3">
-//             <form class="w-full">
-//               <div class="flex flex-wrap -mx-3 mb-6">
-//                 <div class="w-full px-3">
-//                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1">
-//                     ID
-//                   </label>
-//                   <input readonly id="editID" class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-//                     type="number" value="${category.id}" placeholder="Id">
-//                 </div>
-//               </div>
-//               <div class="flex flex-wrap -mx-3 mb-6">
-//                 <div class="w-full px-3">
-//                   <label class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1">
-//                     Name
-//                   </label>
-//                   <input id="editName" class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
-//                     type="text" value="${category.name}" placeholder="Name">
-//                 </div>
-//               </div>
-//               <input class="editCate" data-id="${category.id}" type="button" value="Edit category" id="editPro" class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   `;
-// }
+    }).catch(function (error) {
+      console.error("Error fetching category or creating form:", error.message);
+    });
+  } else {
+    console.log("error r");
+  }
+});
 
-// function editCategory(id) {
-//   const editName = document.getElementById('editName').value;
-//   const editID = document.getElementById('editID').value;
-//   const updatedCategory = {
-//     "id": parseInt(editID, 10),
-//     "name": editName
-//   };
+function createEditForm(pro) {
+  let form = `
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="flex flex-1 flex-col md:flex-row lg:flex-row mx-5">
+          <div class="mb-2 border-solid border-gray-300 rounded border shadow-sm w-full">
+              <div class="bg-gray-200 px-2 py-3 border-solid border-gray-200 border-b">
+                  Edit product 
+              </div>
+              <div class="p-3">
+                  <form class="w-full">
 
-//   array = array.map(item => (item.id === id ? updatedCategory : item));
-//   document.getElementById('editModal').style.display = "none";
-//   renderCategories(array);
-// }
-fetchDataAndRender()
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  ID
+                              </label>
+                              <input disabled value="${pro.id}" id="id"
+                                  class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                  type="number" placeholder="Id">
+                          </div>
+                      </div>
+
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  Name
+                              </label>
+                              <input id="name" value="${pro.name}"
+                                  class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                  type="text" placeholder="Name">
+                          </div>
+                      </div>
+
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  Img
+                              </label>
+                              <input id="img" value="${pro.img}"
+                                  class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                  type="file" placeholder="Img">
+                          </div>
+                      </div>
+
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  Price
+                              </label>
+                              <input id="price" value="${pro.price}"
+                                  class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                  type="number" placeholder="Price">
+                          </div>
+                      </div>
+
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  Cate
+                              </label>
+                              <select id="categorySelect" class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"></select>
+                          </div>
+                      </div>
+
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <div class="w-full px-3">
+                              <label
+                                  class="block uppercase tracking-wide text-grey-darker text-xs font-light mb-1"
+                                  for="grid-password">
+                                  Detail
+                              </label>
+                              <input id="detail" value="${pro.detail}"
+                                  class="appearance-none block w-full bg-grey-200 text-grey-darker border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey"
+                                  type="text" placeholder="Detail">
+                          </div>
+                      </div>
+
+                      <input type="button" value="Edit category" id="editPro"
+                          class="editPro m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+  `;
+  const selectElement = document.getElementById("categorySelect");
+
+  (async () => {
+    try {
+      const response = await fetch("http://localhost:3000/categories/");
+      if (!response.ok) {
+        throw new Error("Không thể lấy danh mục: " + response.statusText);
+      }
+
+      const categories = await response.json();
+
+      // Thêm option cho mỗi danh mục
+      categories.forEach(function (category) {
+        const option = document.createElement("option");
+        option.value = category.cate_id;
+        option.text = category.name;
+        selectElement.add(option);
+      });
+
+      // Chọn danh mục tương ứng với sản phẩm
+      selectElement.value = pro.cate_id;
+    } catch (error) {
+      console.error("Error fetching categories:", error.message);
+    }
+  })();
+
+  return form;
+}
+
+
+
+editModal.addEventListener("click", function (event) {
+  if (event.target.classList.contains('editPro')) {
+    const id = document.querySelector("#id").value;
+    console.log(id);
+    const name = document.querySelector("#name").value;
+    const price = document.querySelector("#price").value;
+    const detail = document.querySelector("#detail").value;
+
+    // Xử lý trường nhập file
+    const imgInput = document.querySelector("#img");
+    const img = imgInput.files.length > 0 ? imgInput.files[0] : null;
+
+    const category = document.querySelector("#categorySelect").value;
+
+    const updatedCategory = {
+      "id": id,
+      "name": name,
+      "price": price,
+      "detail": detail,
+      "img": img, 
+      "cate_id": category 
+    };
+    productService.updateCase(id, updatedCategory)
+      .then(() => {
+        document.getElementById('editModal').style.display = "none";
+        fetchData(); 
+      })
+      .catch(error => {
+        console.error('Lỗi cập nhật :', error.message);
+      });
+  } else {
+    console.log('Lỗi');
+  }
+});
+
+
+fetchData();

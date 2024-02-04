@@ -138,139 +138,31 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "created_date": "2024-02-15",
-      "customer_address": "456 Elm Street",
-      "customer_email": "anothercustomer@example.com",
-      "customer_name": "John Smith",
-      "customer_phone_number": "+1 555-666-7777",
-      "status": "Processing"
-    },
-    {
-      "id": "2",
-      "created_date": "2024-03-02",
-      "customer_address": "789 Pine Avenue",
-      "customer_email": "pinecustomer@example.com",
-      "customer_name": "Emily White",
-      "customer_phone_number": "+1 333-444-5555",
-      "status": "Shipped"
-    },
-    {
-      "id": "3",
-      "created_date": "2024-03-10",
-      "customer_address": "101 Maple Lane",
-      "customer_email": "maplecustomer@example.com",
-      "customer_name": "David Brown",
-      "customer_phone_number": "+1 777-888-9999",
-      "status": "Delivered"
-    },
-    {
-      "id": "4",
-      "created_date": "2024-03-18",
-      "customer_address": "222 Birch Road",
-      "customer_email": "birchcustomer@example.com",
-      "customer_name": "Sarah Green",
-      "customer_phone_number": "+1 123-456-7890",
-      "status": "Pending"
-    },
-    {
-      "id": "5",
-      "created_date": "2024-03-25",
-      "customer_address": "333 Cedar Street",
-      "customer_email": "cedarcustomer@example.com",
-      "customer_name": "Thomas Taylor",
-      "customer_phone_number": "+1 999-000-1111",
-      "status": "Processing"
-    },
-    {
-      "id": "6",
-      "created_date": "2024-04-02",
-      "customer_address": "444 Oak Avenue",
-      "customer_email": "oakcustomer@example.com",
-      "customer_name": "Jennifer Anderson",
-      "customer_phone_number": "+1 222-333-4444",
-      "status": "Shipped"
-    },
-    {
-      "id": "7",
-      "created_date": "2024-04-10",
-      "customer_address": "555 Pine Street",
-      "customer_email": "pine2customer@example.com",
-      "customer_name": "Robert Johnson",
-      "customer_phone_number": "+1 777-888-9999",
-      "status": "Delivered"
-    },
-    {
-      "id": "8",
-      "created_date": "2024-04-18",
-      "customer_address": "666 Elm Lane",
-      "customer_email": "elmcustomer@example.com",
-      "customer_name": "Jessica White",
-      "customer_phone_number": "+1 111-222-3333",
-      "status": "Pending"
-    },
-    {
-      "id": "9",
-      "created_date": "2024-04-25",
-      "customer_address": "777 Birch Road",
-      "customer_email": "birch2customer@example.com",
-      "customer_name": "Michael Green",
-      "customer_phone_number": "+1 999-000-1111",
-      "status": "Processing"
-    },
-    {
-      "id": "10",
-      "created_date": "2024-05-02",
-      "customer_address": "888 Cedar Avenue",
-      "customer_email": "cedar2customer@example.com",
-      "customer_name": "Maria Taylor",
-      "customer_phone_number": "+1 555-666-7777",
-      "status": "Shipped"
-    },
-    {
-      "id": "11",
-      "created_date": "2024-05-10",
-      "customer_address": "999 Maple Street",
-      "customer_email": "maple2customer@example.com",
-      "customer_name": "Christopher Brown",
-      "customer_phone_number": "+1 123-456-7890",
-      "status": "Delivered"
-    },
-    {
-      "id": "12",
-      "created_date": "2024-05-18",
-      "customer_address": "1010 Oak Lane",
-      "customer_email": "oak2customer@example.com",
-      "customer_name": "Amanda Anderson",
-      "customer_phone_number": "+1 333-444-5555",
-      "status": "Pending"
-    },
-    {
-      "id": "13",
-      "created_date": "2024-05-25",
-      "customer_address": "1111 Pine Road",
-      "customer_email": "pine3customer@example.com",
-      "customer_name": "Daniel Johnson",
-      "customer_phone_number": "+1 777-888-9999",
-      "status": "Processing"
-    },
-    {
-      "id": "14",
-      "created_date": "2024-06-02",
-      "customer_address": "1212 Elm Street",
-      "customer_email": "elm2customer@example.com",
-      "customer_name": "Laura White",
-      "customer_phone_number": "+1 111-222-3333",
-      "status": "Shipped"
-    },
-    {
-      "id": "15",
-      "created_date": "2024-06-10",
-      "customer_address": "1313 Birch Avenue",
-      "customer_email": "birch3customer@example.com",
-      "customer_name": "Brian Green",
-      "customer_phone_number": "+1 999-000-1111",
-      "status": "Delivered"
+      "name": "",
+      "address": "",
+      "mobile": "",
+      "email": "",
+      "date": "11:14:53",
+      "cart": [
+        {
+          "id": "2",
+          "cate_id": 2,
+          "detail": "Aromatic and flavorful basil",
+          "image": "",
+          "name": "Basil",
+          "price": 1.2,
+          "qty": 1
+        }
+      ],
+      "customer": {
+        "id": "be04_customer"
+      },
+      "order_details": [
+        {
+          "id": "be04_1"
+        }
+      ],
+      "id": "be04"
     }
   ],
   "products": [
@@ -340,11 +232,11 @@
     },
     {
       "id": "10",
-      "cate_id": 4,
-      "detail": "Leafy green with a slightly bitter taste",
-      "image": "",
       "name": "Endive",
-      "price": 2.3
+      "price": "2.3",
+      "detail": "Leafy green with a slightly bitter taste",
+      "img": null,
+      "cate_id": ""
     },
     {
       "id": "11",
@@ -385,6 +277,58 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvperFaIVtZMQ1usrdK4nlCY_EDrCCjYy75A&usqp=CAU",
       "name": "Cucumber",
       "price": 2.4
+    },
+    {
+      "id": "8",
+      "name": "fdhg",
+      "price": "546",
+      "detail": "phi",
+      "img": null,
+      "cate_id": ""
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "phi",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "name": "",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "3",
+      "name": "svsđs",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "dvsvdsv",
+      "password": "sdvvsvdvd"
+    },
+    {
+      "id": "4",
+      "name": "phi",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "phideptroai337@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "5",
+      "name": "Phi Hoàng",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "phinhpc05786@fpt.edu.vn",
+      "password": "123"
+    },
+    {
+      "id": "6",
+      "name": "",
+      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "email": "",
+      "password": ""
     }
   ]
 }

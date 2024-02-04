@@ -19,10 +19,10 @@ fetch("http://localhost:3000/orders")
       array.forEach((element) => {
         child_html += `
         <tr>
-        <td class="border px-4 py-2">${element.customer_name}</td>
-        <td class="border px-4 py-2">${element.customer_phone_number}</td>
-        <td class="border px-4 py-2">${element.customer_email}</td>
-        <td class="border px-4 py-2">${element.created_date}</td>
+        <td class="border px-4 py-2">${element.name}</td>
+        <td class="border px-4 py-2">${element.mobile}</td>
+        <td class="border px-4 py-2">${element.email}</td>
+        <td class="border px-4 py-2">${element.date}</td>
 
         <td class="border px-4 py-2">
             <a class="bg-teal-300 cursor-pointer rounded p-1 mx-1 text-white">
