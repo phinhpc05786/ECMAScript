@@ -37,7 +37,8 @@ document.querySelector('#register').addEventListener('click', function() {
         image: "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
         name: nameInput.value,
         email: emailInput.value,
-        password: passwordInput.value
+        password: passwordInput.value,
+        admin: 0
       };
   
       // Gửi dữ liệu đăng ký mới lên API
@@ -65,6 +66,9 @@ document.querySelector('#register').addEventListener('click', function() {
       console.error('Có vấn đề với hoạt động fetch:', error);
     });
   });
+
+  
+
   
   
   

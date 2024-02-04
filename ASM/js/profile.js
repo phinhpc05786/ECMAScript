@@ -21,7 +21,7 @@ let child_html = `<div class="container py-5 h-100">
 
         </div>
         <input type="button" id="logout" value="Logout" class="btn btn-outline-primary btn-floating" onclick="logout()">
-        <a  href="./admin/index.html" class="btn btn-outline-primary btn-floating">Admin</a>
+        <a style="width: 80px; margin-left: 150px; margin-top: 10px" href="./admin/index.html" id="admin" class="btn btn-outline-primary btn-floating">Admin</a>
         <div class="d-flex justify-content-between text-center mt-5 mb-2">
           <div>
             <p class="mb-2 h5">8471</p>
@@ -53,3 +53,27 @@ function logout() {
     // Chuyển hướng đến trang đăng nhập
     window.location.href = './login.html';
   }
+
+
+
+
+
+const storedUserDataString = localStorage.getItem('loggedInUser');
+console.log('storedUserDataString:', storedUserDataString);
+
+
+const loggedInUser = JSON.parse(storedUserDataString) || {};
+console.log('loggedInUser:', loggedInUser);
+
+const loggedInUserAdmin = loggedInUser.admin;
+
+console.log('loggedInUserAdmin:', loggedInUserAdmin);
+
+const adminLink = document.getElementById('admin');
+if (loggedInUserAdmin === 1) {
+  adminLink.style.display = 'block'; // Hiện thẻ
+} else {
+  adminLink.style.display = 'none'; // Ẩn thẻ
+}
+
+

@@ -163,6 +163,45 @@
         }
       ],
       "id": "be04"
+    },
+    {
+      "name": "Phi nguyễn",
+      "address": "sóc trăng",
+      "mobile": "0702912140",
+      "email": "phideptroai337@gmail.com",
+      "date": "00:00:13 5/2/2024",
+      "cart": [
+        {
+          "id": "1",
+          "cate_id": 1,
+          "detail": "Nutrient-rich leafy greens",
+          "image": "",
+          "name": "Spinach",
+          "price": 2.5,
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "cate_id": 2,
+          "detail": "Aromatic and flavorful basil",
+          "image": "",
+          "name": "Basil",
+          "price": 1.2,
+          "qty": 1
+        }
+      ],
+      "customer": {
+        "id": "93d9_customer"
+      },
+      "order_details": [
+        {
+          "id": "93d9_1"
+        },
+        {
+          "id": "93d9_2"
+        }
+      ],
+      "id": "93d9"
     }
   ],
   "products": [
@@ -277,14 +316,6 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvperFaIVtZMQ1usrdK4nlCY_EDrCCjYy75A&usqp=CAU",
       "name": "Cucumber",
       "price": 2.4
-    },
-    {
-      "id": "8",
-      "name": "fdhg",
-      "price": "546",
-      "detail": "phi",
-      "img": null,
-      "cate_id": ""
     }
   ],
   "user": [
@@ -293,42 +324,24 @@
       "name": "phi",
       "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
       "email": "",
-      "password": "123"
+      "password": "123",
+      "admin": 1
     },
     {
       "id": "2",
       "name": "",
       "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
       "email": "",
-      "password": ""
+      "password": "",
+      "admin": 0
     },
     {
       "id": "3",
-      "name": "svsđs",
       "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
-      "email": "dvsvdsv",
-      "password": "sdvvsvdvd"
-    },
-    {
-      "id": "4",
-      "name": "phi",
-      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
-      "email": "phideptroai337@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "5",
-      "name": "Phi Hoàng",
-      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
+      "name": "Hoangf Phi",
       "email": "phinhpc05786@fpt.edu.vn",
-      "password": "123"
-    },
-    {
-      "id": "6",
-      "name": "",
-      "image": "https://cdn-icons-png.flaticon.com/512/9131/9131529.png",
-      "email": "",
-      "password": ""
+      "password": "12345",
+      "admin": 1
     }
   ]
 }
